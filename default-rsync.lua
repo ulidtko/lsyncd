@@ -71,6 +71,8 @@ rsync.checkgauge = {
 		keep_dirlinks     =  true,
 		links             =  true,
 		one_file_system   =  true,
+		omit_dir_times    =  true,
+		omit_link_times   =  true,
 		owner             =  true,
 		password_file     =  true,
 		perms             =  true,
@@ -95,7 +97,7 @@ rsync.checkgauge = {
 --
 -- Spawns rsync for a list of events
 --
--- Exlcusions are already handled by not having
+-- Exclusions are already handled by not having
 -- events for them.
 --
 rsync.action = function( inlet )
@@ -425,6 +427,8 @@ rsync.prepare =
 		keep_dirlinks      = 'K',
 		links              = 'l',
 		one_file_system    = 'x',
+		omit_dir_times     = 'O',
+		omit_link_times    = 'J',
 		owner              = 'o',
 		perms              = 'p',
 		protect_args       = 's',
